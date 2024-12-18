@@ -1,0 +1,75 @@
+/* Resetowanie niektórych domyślnych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100vh;
+}
+
+/* Styl nagłówka */
+header {
+    background-color: #00bcd4;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    height: 20%;
+}
+
+/* Styl sekcji aside */
+aside {
+    background-color: #795548;
+    color: white;
+    width: 200px;
+    padding: 15px;
+    float: left; /* Umożliwia umieszczenie aside obok main */
+    height: 80%; /* Wysokość na 100% widoku */
+    overflow-y: auto; /* Dodaje suwak w pionie, gdy zawartość jest za wysoka */
+}
+
+/* Styl dla przycisków w aside */
+aside button {
+    display: block; /* Umożliwia przyciskom zajmowanie całej szerokości */
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%; /* Przyciski zajmują całą szerokość */
+    transition: background-color 0.3s; /* Płynna zmiana koloru tła */
+}
+
+aside button:hover {
+    background-color: #e64a19; /* Zmiana koloru przy najechaniu */
+}
+
+/* Styl sekcji main */
+main {
+    margin-left: 220px; /* Przesunięcie w prawo, aby uwzględnić aside */
+    padding: 20px;
+    background-color: white;
+    height: 80%; /* Zapewnia, że główna sekcja zajmuje co najmniej 100% wysokości widoku */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodanie cienia dla efektu głębi */
+}
+
+/* Styl dla tekstu w main */
+main p {
+    margin-bottom: 15px; /* Dystans między akapitami */
+}
+
+#messageForm{
+    display: none;
+}
+#messages{
+    min-height: 20vh;
+    max-height: 70vh;
+    background-color: #ff3c00;
+    overflow-y: auto; /* Dodaje suwak w pionie, gdy zawartość jest za wysoka */
+}
