@@ -11,7 +11,7 @@ $(document).ready(function(e) {
             $.ajax({
                 url: 'logic/messages_send.php',
                 method: 'POST',
-                data: { message: message }, // Klucz 'message' odpowiada nazwie w PHP
+                data: { message: htmlspecialchars(message) }, // Klucz 'message' odpowiada nazwie w PHP
                 success: function(response) {
                     console.log('Serwer odpowiedział:', response);
                     load_messages_new()
@@ -26,11 +26,9 @@ $(document).ready(function(e) {
     });
     $('#userButtons').on('click', function(e) {
         setTimeout(() => {
-            console.log("uwu") 
             e.preventDefault();
             load_messages();
             setInterval(load_messages_new, 1000);
-            console.log("Waited 3 seconds!");
         }, 500)
     });
     

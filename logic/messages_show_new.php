@@ -18,9 +18,14 @@ if($number_now>$number){
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) { 
-            echo "<p><strong>".$row['name']."</strong>: ".$row["tresc"]." <sub>".$row["data"]."</sub></p>";
+        while($row = $result->fetch_assoc()) {
+            if($_SESSION["id_rozmowca1"]==$row["id_nadawcy"] or $_SESSION["id_rozmowca2"]==$row["id_nadawcy"]){ 
+                echo $_SESSION["id_rozmowy"]." $id <p><strong>".$row['name']."</strong>: ".$row["tresc"]." <sub>".$row["data"]."</sub></p>";
             }
+            else{
+                echo "nowa wiadomość w innym chatcie";
+            }
+        }
     }
     else {
         echo "brak wiadomosci";

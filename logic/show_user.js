@@ -20,8 +20,7 @@ $(document).ready(function() {
             url: 'logic/add_conversation.php', // Plik PHP do dodawania rozmowy
             method: 'POST',
             data: $(this).serialize(),
-            success: function(response) {
-                alert(response); // Wyświetl komunikat
+            success: function() {
                 loadUsers(); // Przeładuj użytkowników
             }
         });
@@ -33,6 +32,7 @@ $(document).ready(function() {
         const element = document.getElementById('messageForm');
         element.style.display = 'block';
         var userId = $(this).val();
+        console.log(userId);
         $.post('logic/select_user.php', { user: userId }, function(data) {
             $('#zkim').html(data); // Wyświetl wybranego użytkownika
         });

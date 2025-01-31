@@ -24,6 +24,9 @@ session_start(); // Rozpocznij sesję
             </div>
             <input type="submit" value="Zaloguj się" name="login" class="btn">
         </form>
+        <a href="register.php">
+            <button>Nie masz konta? Zarejestruj się!</button>
+        </a>
         <?php
         // Wyświetl błąd, jeśli istnieje
         if (isset($_SESSION["error"])) {

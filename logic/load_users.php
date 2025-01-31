@@ -8,7 +8,13 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<button type='button' class='user-button' value='" . $row['id'] . "' style='display: block; width: 100%; margin: 5px 0; background-color: #ff5722; color: white; border: none; padding: 10px; cursor: pointer;'>" . $row['name'] . "</button>";
+        echo "<button value='{$row['id']}' class='user-button'>
+        <img class='profile-pic' src='./img/default_pfp.jpg' height=50px alt='Profile Picture'>
+        <div class='user-info'>
+            <p class='user-name'>{$row['name']}</p>
+            <p class='last-message'>Hey, just wanted to check in about the meeting...</p>
+        </div>
+    </button>";
     }
 } else {
     echo "Brak użytkowników do wyświetlenia.";

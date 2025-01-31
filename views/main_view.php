@@ -26,9 +26,8 @@
         <input type="text" name="new_conv" placeholder="Nazwa rozmowy" required>
         <input type="submit" value="Dodaj">
     </form>
- 
-    <form action="" id="userButtons">
 
+    <form action="" id="userButtons">
     </form>
    
     <form action="" method="post">
@@ -38,17 +37,7 @@
 
 <main>
     <section id="zkim">
-    <?php
-    // Sprawdź, czy użytkownik został wybrany
-    if(isset($_SESSION["selected_user"]) && $is_chat_on == true){
-        echo "<h1>";
-        echo $_SESSION["chat"];
-        echo "</h1>";
-    } else {
-        $info = "Brak wybranego użytkownika";
-        echo $info;
-    }
-    ?>
+  
     </section>
     <section id="chat">
         

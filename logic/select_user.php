@@ -7,7 +7,12 @@ if (isset($_POST["user"])) {
     $_SESSION["selected_user"] = $id2; // Przechowaj wybranego użytkownika w sesji
 
     $id = $_SESSION["id"];
-    $sql = "SELECT users.name, rozmowa.id FROM rozmowa, users WHERE (rozmowa.id_rozmowca1 = users.id OR rozmowa.id_rozmowca2 = users.id) AND (id_rozmowca1 = ".$id." OR id_rozmowca2 = ".$id.") AND (id_rozmowca1 = ".$id2." OR id_rozmowca2 = ".$id2.") AND name != '".$_SESSION["name"]."';";
+    $sql = "SELECT users.name, rozmowa.id, rozmowa.id_rozmowca1, rozmowa.id_rozmowca2 
+    FROM rozmowa, users 
+    WHERE (rozmowa.id_rozmowca1 = users.id OR rozmowa.id_rozmowca2 = users.id) 
+    AND (id_rozmowca1 = $id OR id_rozmowca2 = $id) 
+    AND (id_rozmowca1 = $id2 OR id_rozmowca2 = $id2) 
+    AND name != '{$_SESSION["name"]}';"; 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -15,7 +20,8 @@ if (isset($_POST["user"])) {
             $_SESSION["chat"] = $row['name'];
             $_SESSION["id_rozmowy"] = $row['id'];
             echo "Rozmowa z: " . $row['name']. " id rozmowy to: " . $row['id'];
-            $_SESSION["id_rozmowy"] = $row["id"];
+            $_SESSION["id_rozmowca1"] = $row["id_rozmowca1"];
+            $_SESSION["id_rozmowca2"] = $row["id_rozmowca2"];
         }
     } else {
         echo "Brak wybranego użytkownika";
