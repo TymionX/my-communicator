@@ -1,0 +1,125 @@
+/* Resetowanie niektórych domyślnych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100vh;
+}
+
+/* Styl nagłówka */
+header {
+    background-color: #00bcd4;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    height: 20%;
+}
+
+/* Styl sekcji aside */
+aside {
+    background-color: #795548;
+    color: white;
+    width: 200px;
+    padding: 15px;
+    float: left; /* Umożliwia umieszczenie aside obok main */
+    height: 80%; /* Wysokość na 100% widoku */
+    overflow-y: auto; /* Dodaje suwak w pionie, gdy zawartość jest za wysoka */
+}
+
+/* Styl dla przycisków w aside */
+aside button {
+    display: block; /* Umożliwia przyciskom zajmowanie całej szerokości */
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%; /* Przyciski zajmują całą szerokość */
+    transition: background-color 0.3s; /* Płynna zmiana koloru tła */
+}
+
+aside button:hover {
+    background-color: #e64a19; /* Zmiana koloru przy najechaniu */
+}
+
+/* Styl sekcji main */
+main {
+    margin-left: 220px; /* Przesunięcie w prawo, aby uwzględnić aside */
+    padding: 20px;
+    background-color: white;
+    height: 80%; /* Zapewnia, że główna sekcja zajmuje co najmniej 100% wysokości widoku */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Dodanie cienia dla efektu głębi */
+}
+
+/* Styl dla tekstu w main */
+main p {
+    margin-bottom: 15px; /* Dystans między akapitami */
+}
+
+#messageForm{
+    display: none;
+}
+#messages{
+    min-height: 20vh;
+    max-height: 70vh;
+    background-color: #ff3c00;
+    overflow-y: auto; /* Dodaje suwak w pionie, gdy zawartość jest za wysoka */
+}
+.user-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #343a40;
+    border: 1px solid #212529;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.user-button:hover {
+    background-color: #495057;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 0;
+}
+
+.last-message {
+    font-size: 14px;
+    color: #b5b5b5;
+    margin: 5px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    all: unset;
+}
