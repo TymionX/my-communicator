@@ -15,7 +15,8 @@ Plausibe features are:
 Personalizing chat's look
 group's chats
 
-<textarea>structure of project:
+
+structure of project: (check code to format it properly for i am too lazy)
 ├───app (stuff that user shouldn't have access to)
 │   ├───config (empty folder yet to be used)
 │   ├───includes
@@ -47,7 +48,6 @@ group's chats
     │      
     │
     └───img (folder which will be moved to /app later, there will be saved profile pictures of users)
-    </textarea>
 
 hopes you enjoy this project!
             
