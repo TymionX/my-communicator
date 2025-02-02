@@ -1,20 +1,24 @@
 <?php
+/**
+ * this file is responsible for sending messages to other users. It work by adding them to database. chat_id is id of particular convertation message belongs to, data is time when messages was sended, message_content is what is in the message and sender_id is id of user who sended the message.
+ * this is used in messages.js
+ */
 session_start();
 require_once("../includes/connect_to_database.php");
 
-$id_rozmowy = $_SESSION['id_rozmowy'];
+$chat_id = $_SESSION['chat_id'];
 $id = $_SESSION['id'];
 
 if (isset($_POST['message']) && !empty(trim($_POST['message']))) {
-    $tresc = htmlspecialchars($_POST['message']); // Bezpieczne przetwarzanie danych
-    $sql = "INSERT INTO messages (id_rozmowy, data, tresc, id_nadawcy) 
-            VALUES ($id_rozmowy, NOW(), '$tresc', $id)";
+    $message_content = htmlspecialchars($_POST['message']); 
+    $sql = "INSERT INTO messages (chat_id, date, message_content, sender_id) 
+            VALUES ($chat_id, NOW(), '$message_content', $id)";
     if ($conn->query($sql)) {
-        echo 'Wiadomość została wysłana!';
+        echo 'Message sended succesfully';
     } else {
-        echo 'Błąd zapisu: ' . $conn->error;
+        echo 'Write error ' . $conn->error;
     }
 } else {
-    echo 'Wiadomość jest pusta!';
+    echo 'Messages cannot be empty';
 }
 ?>

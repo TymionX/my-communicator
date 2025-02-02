@@ -1,4 +1,7 @@
 <?php
+/**
+ * this file is responsible for adding new chats with other users after using "Nowa chats" functionality
+ */
 session_start();
 require_once("../includes/connect_to_database.php");
 
@@ -15,21 +18,21 @@ if (isset($_POST["new_conv"])) {
         while ($row = $result->fetch_assoc()) {
             $ids[] = $row['id'];
         }
-        $sql = "SELECT * FROM rozmowa WHERE (id_rozmowca1 = ".$ids[0]." AND id_rozmowca2 = ".$ids[1].") OR (id_rozmowca1 = ".$ids[1]." AND id_rozmowca2 = ".$ids[0].")";
+        $sql = "SELECT * FROM chats WHERE (chat_participant1_id = ".$ids[0]." AND chat_participant2_id = ".$ids[1].") OR (chat_participant1_id = ".$ids[1]." AND chat_participant2_id = ".$ids[0].")";
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
-            $sql = "INSERT INTO rozmowa (id_rozmowca1, id_rozmowca2) VALUES (".$ids[0].", ".$ids[1].")";
+            $sql = "INSERT INTO chats (chat_participant1_id, chat_participant2_id) VALUES (".$ids[0].", ".$ids[1].")";
             if ($conn->query($sql) === TRUE) {
-                echo "Nowa rozmowa została dodana.";
+                echo "New chat added succesfully";
             } else {
                 echo "Błąd: " . $conn->error;
             }
         } else {
-            echo "Rozmowa już istnieje.";
+            echo "You already have chat with this user";
         }
     } else {
-        echo "Nie znaleziono użytkowników.";
+        echo "User was not found";
     }
 }
 $conn->close();
-?>
+?> 

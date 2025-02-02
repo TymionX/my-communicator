@@ -12,29 +12,29 @@
 <body>
 
 <header>
-    <h1>Nagłówek Strony</h1>
+    <h1>header</h1>
 </header>
 
 <aside>
     <h2>
         <?php
-        echo "Witaj ".$_SESSION["name"];
+        echo "Hello ".$_SESSION["name"];
         ?>
     </h2>
     <form id="newConvForm">
-        <label>Nowa rozmowa</label>
-        <input type="text" name="new_conv" placeholder="Nazwa rozmowy" required>
-        <input type="submit" value="Dodaj">
+        <label>New chat:</label>
+        <input type="text" name="new_conv" placeholder="Username" required>
+        <input type="submit" value="Add">
     </form>
 
     <form action="" id="userButtons">
     </form>
     <a href="setting.php">
-            <button>Ustawienia konta</button>
+            <button>account settings</button>
     </a>
    
     <form action="" method="post">
-        <input type="submit" value="Wyloguj się" name="logout">
+        <input type="submit" value="Logout" name="logout">
     </form>
 </aside>
 
@@ -45,11 +45,11 @@
     <section id="chat">
         
         <div id="messages">
-            <!-- Wysłane wiadomości będą wyświetlane tutaj -->
+            <!-- sended messages are shown here-->
         </div>
         <form id="messageForm">
             <input type="text" name="message" id="messageInput" required>
-            <input type="submit" value="wyślij" id="sendButton">
+            <input type="submit" value="send" id="sendButton">
         </form>
     </section>
 </main>

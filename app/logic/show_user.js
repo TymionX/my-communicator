@@ -1,16 +1,14 @@
 $(document).ready(function() {
-    // Funkcja do ładowania użytkowników
+    
     function loadUsers() {
         $.ajax({
-            url: '../app/logic/load_users.php', // Plik PHP do ładowania użytkowników
+            url: '../app/logic/load_users.php', 
             method: 'POST',
             success: function(data) {
                 $('#userButtons').html(data);
             }
         });
     }
-
-    // Ładowanie użytkowników przy starcie
     loadUsers();
 
     // Obsługa dodawania nowej rozmowy
@@ -34,7 +32,7 @@ $(document).ready(function() {
         var userId = $(this).val();
         console.log(userId);
         $.post('../app/logic/select_user.php', { user: userId }, function(data) {
-            $('#zkim').html(data); // Wyświetl wybranego użytkownika
+            $('#zkim').html(data); 
         });
     });
 })

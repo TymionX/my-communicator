@@ -12,26 +12,26 @@ session_start(); // Rozpocznij sesję
 </head>
 <body>
     <div class="container">
-        <h2>Logowanie</h2>
+        <h2>Please log in!</h2>
         <form action="" method="post" class="form">
             <div class="form-group">
-                <label for="name">Nazwa użytkownika:</label>
+                <label for="name">user nickname::</label>
                 <input type="text" name="name" id="name" required>
             </div>
             <div class="form-group">
-                <label for="password">Hasło:</label>
+                <label for="password">Passord::</label>
                 <input type="password" name="password" id="password" required>
             </div>
-            <input type="submit" value="Zaloguj się" name="login" class="btn">
+            <input type="submit" value="Log in" name="login" class="btn">
         </form>
         <a href="register.php">
-            <button>Nie masz konta? Zarejestruj się!</button>
+            <button>You don't have account yet? Please register!</button>
         </a>
         <?php
-        // Wyświetl błąd, jeśli istnieje
+        // error showing
         if (isset($_SESSION["error"])) {
             echo "<p style='color:red;'>" . $_SESSION["error"] . "</p>";
-            unset($_SESSION["error"]); // Usuń błąd po wyświetleniu
+            unset($_SESSION["error"]);
         }
         include("../app/logic/login_logic.php");
         ?>

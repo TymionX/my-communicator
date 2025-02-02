@@ -13,6 +13,7 @@
     </style>    
 </head>
 <body>
+  <h1 style="color:red"> !!! this part is not finnished yet !!! </h1>
     <?php
     session_start();
     require_once("../app/includes/connect_to_database.php");
@@ -25,7 +26,6 @@
         exit;
     }
 
-    // Przechowujemy wyniki w tablicy
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         echo "<table>
@@ -54,7 +54,7 @@
       </table>";}
     ?>
     <a href="index.php">
-            <button>powrót</button>
+            <button>return</button>
     </a>
     
 </body>

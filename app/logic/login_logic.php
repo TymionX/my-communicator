@@ -1,4 +1,7 @@
 <?php
+/**
+ * this file is responsible for login in users and saving user data needed in other parts of project in session
+ */
 if (isset($_POST["login"])) {
     require_once("../app/includes/connect_to_database.php");
 
@@ -24,7 +27,7 @@ if (isset($_POST["login"])) {
         header("Location: index.php");
         exit;
     } else {
-        echo "Błąd: Nieprawidłowa nazwa użytkownika lub hasło.";
+        echo "Error. Password or nickname incorrect";
     }
 }
 ?>

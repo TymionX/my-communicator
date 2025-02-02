@@ -10,16 +10,16 @@ if(isset($_POST["submit"])){
         $sql = "INSERT INTO users (name, password) VALUES ('".$_POST["name"]."', '".$_POST["password"]."')";
         $result = $conn->query($sql);
         if ($result) {
-            echo "Użytkownik dodany";
+            echo "User was added succesfully";
         }
         else {
-            echo "Błąd";
+            echo "error, user was not added. Probably problem with database";
         }
     
         
     }
     else{
-        echo "Użytkownik o podanej nazwie już istnieje";
+        echo "User with thss nickname already exist. Please use another nickname";
     }
     }
     ?>
