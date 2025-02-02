@@ -15,39 +15,46 @@ Plausibe features are:
 Personalizing chat's look
 group's chats
 
+newest updates:
+- everything transtaled into english 
 
-structure of project: (check code to format it properly for i am too lazy)
-├───app (stuff that user shouldn't have access to)
-│   ├───config (empty folder yet to be used)
-│   ├───includes
-│   │       connect_to_database.php (script which allow you to connect to database)
-│   │
-│   ├───logic
-│   │       add_conversation.php (script for adding new chats with new users)
-│   │       load_users.php (script which load your chats)
-│   │       login_logic.php (script which allow you to login)
-│   │       main_logic.php (script which allow y... wait, i just realized it's the propably same as add_conversation.php, will fix it later xD)
-│   │       messages.js (js script which makes use of 3 scripts below)
-│   │       messages_send.php (sending messages)
-│   │       messages_show.php (showing messages)
-│   │       messages_show_new.php (showing new messages dynamically) 
-│   │       register_logic.php (script which allow you to register)
-│   │       select_user.php (script for chosing which chat you are chatting on)
-│   │       show_user.js (showing user after load_users.php loads them)
-│   │
-│   └───views
-│           main_view.php (awful frontend)
-│
-└───public
-    │   index.php (main_view.php and main_logic.php connected)
-    │   login.php (login)
-    │   register.php (register)
-    │   setting.php (user setting, didn't finnished yet)
-    │
-    ├───css (just folder with css and html file to delete later)
-    │      
-    │
-    └───img (folder which will be moved to /app later, there will be saved profile pictures of users)
+
+structure of project:
+<pre><span style="background-color:#FFFFFF"><font color="#2B2B2B">                                                                                                                                                                                                         </font></span>
+project
+├── app
+│   ├── config (didn&apos;t used yet)
+│   ├── includes
+│   │   └── connect_to_database.php
+│   ├── logic
+│   │   ├── add_conversation.php (adding new chats)
+│   │   ├── load_users.php (loading chats)
+│   │   ├── login_logic.php (loging)
+│   │   ├── main_logic.php (logout and checking if user is logged in)
+│   │   ├── messages.js (handlig of sending and reciving messages) 
+│   │   ├── messages_send.php (sending messages)
+│   │   ├── messages_show_new.php (loading new resived messages)
+│   │   ├── messages_show.php (loading older messages)
+│   │   ├── register_logic.php (registering)
+│   │   ├── select_user.php (selecting chat you want to chat in)
+│   │   └── show_user.js (showing your chats)
+│   └── views
+│       └── main_view.php (awful fronend, will be better in future)
+└── public
+    ├── css (css styles)
+    │   ├── style2.css
+    │   ├── style.css
+    │   └── test_usun_potem.html (file for testing purpuse, can be deleted)
+    ├── img (images which are now used for testing)
+    │   ├── 1ea6ce814fa8e3e8754ecf67e19fce33.jpg
+    │   ├── 6e19c0876087c28535019531542d6c16.jpg
+    │   ├── default_pfp.jpg
+    │   └── hachi.jpg
+    ├── index.php
+    ├── login.php
+    ├── register.php
+    └── setting.php (there will be user settings, it&apos;s not implemented yet)
+</pre>
 
 hopes you enjoy this project!
             
