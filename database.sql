@@ -56,7 +56,8 @@ CREATE TABLE `messages` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  'profil_picture' text DEFAULT 'default_img.jpg' NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
